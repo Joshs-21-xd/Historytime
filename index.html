@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nuestra Historia</title>
+
+<style>
+
+body{
+margin:0;
+overflow:hidden;
+font-family:Arial;
+background:linear-gradient(#87ceeb,#ffd1e8);
+}
+
+#scene{
+position:relative;
+width:100vw;
+height:100vh;
+}
+
+#ground{
+position:absolute;
+bottom:0;
+width:100%;
+height:120px;
+background:#4caf50;
+}
+
+/* CASAS */
+
+.house{
+position:absolute;
+bottom:120px;
+font-size:60px;
+}
+
+#house1{left:5%;}
+#house2{right:5%;}
+
+/* PERSONAJES */
+
+.person{
+position:absolute;
+bottom:120px;
+width:40px;
+height:120px;
+}
+
+.head{
+width:35px;
+height:35px;
+background:#ffd6b0;
+border-radius:50%;
+}
+
+.body{
+width:25px;
+height:45px;
+background:#2196f3;
+margin:auto;
+}
+
+#her .body{
+background:#ff5aa5;
+}
+
+.legs{
+display:flex;
+justify-content:space-between;
+width:25px;
+margin:auto;
+}
+
+.leg{
+width:9px;
+height:28px;
+background:#333;
+animation:walk 0.4s infinite alternate;
+}
+
+#you{
+left:-120px;
+animation:walkYou 16s forwards;
+}
+
+#her{
+right:-120px;
+animation:walkHer 16s forwards;
+}
+
+/* MENSAJES */
+
+.message{
+position:absolute;
+width:100%;
+text-align:center;
+font-size:26px;
+color:white;
+opacity:0;
+padding:0 20px;
+line-height:1.4;
+animation:fade 4s forwards;
+}
+
+#msg1{top:15%;animation-delay:1s;}
+#msg2{top:15%;animation-delay:6s;}
+#msg3{top:15%;animation-delay:11s;}
+#msg4{top:15%;animation-delay:16s;}
+#msg5{top:15%;animation-delay:21s;}
+#msg6{top:15%;animation-delay:26s;}
+#msg7{top:15%;animation-delay:31s;}
+
+/* DIALOGOS */
+
+.dialog{
+position:absolute;
+bottom:260px;
+background:white;
+padding:10px 15px;
+border-radius:12px;
+font-size:20px;
+opacity:0;
+animation:fade 4s forwards;
+}
+
+#d1{left:40%;animation-delay:36s;}
+#d2{right:40%;animation-delay:40s;}
+#d3{left:40%;animation-delay:44s;}
+#d4{right:40%;animation-delay:48s;}
+#d5{left:40%;animation-delay:52s;}
+
+/* MANOS */
+
+#hands{
+position:absolute;
+bottom:185px;
+left:50%;
+transform:translateX(-50%);
+font-size:35px;
+opacity:0;
+animation:showHands 2s forwards;
+animation-delay:56s;
+}
+
+/* CORAZON */
+
+#heart{
+position:absolute;
+top:45%;
+left:50%;
+transform:translate(-50%,-50%) scale(0);
+font-size:180px;
+animation:heart 2s forwards;
+animation-delay:58s;
+}
+
+/* FOTO */
+
+#photo{
+position:absolute;
+top:45%;
+left:50%;
+transform:translate(-50%,-50%);
+width:240px;
+border-radius:20px;
+box-shadow:0 0 20px black;
+opacity:0;
+animation:show 2s forwards;
+animation-delay:60s;
+}
+
+/* EFECTOS */
+
+.heartRain{
+position:absolute;
+font-size:25px;
+animation:fall 6s linear infinite;
+}
+
+/* ANIMACIONES */
+
+@keyframes walkYou{
+to{left:45%;}
+}
+
+@keyframes walkHer{
+to{right:45%;}
+}
+
+@keyframes walk{
+from{transform:rotate(-12deg);}
+to{transform:rotate(12deg);}
+}
+
+@keyframes fade{
+0%{opacity:0;}
+20%{opacity:1;}
+80%{opacity:1;}
+100%{opacity:0;}
+}
+
+@keyframes showHands{
+to{opacity:1;}
+}
+
+@keyframes heart{
+to{transform:translate(-50%,-50%) scale(1);}
+}
+
+@keyframes show{
+to{opacity:1;}
+}
+
+@keyframes fall{
+0%{top:-50px;}
+100%{top:100vh;}
+}
+
+@media(max-width:600px){
+
+.message{font-size:20px;}
+.dialog{font-size:16px;}
+#heart{font-size:120px;}
+#photo{width:70%;}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<audio autoplay loop>
+<source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<div id="scene">
+
+<div id="house1" class="house">🏠</div>
+<div id="house2" class="house">🏠</div>
+
+<div id="you" class="person">
+<div class="head"></div>
+<div class="body"></div>
+<div class="legs">
+<div class="leg"></div>
+<div class="leg"></div>
+</div>
+</div>
+
+<div id="her" class="person">
+<div class="head"></div>
+<div class="body"></div>
+<div class="legs">
+<div class="leg"></div>
+<div class="leg"></div>
+</div>
+</div>
+
+<!-- HISTORIA -->
+
+<div id="msg1" class="message">Durante mucho tiempo vivimos cerca...</div>
+<div id="msg2" class="message">cada uno en su casa</div>
+<div id="msg3" class="message">caminábamos por las mismas calles</div>
+<div id="msg4" class="message">sin saber que algún día nos conoceríamos</div>
+<div id="msg5" class="message">hasta que un día el destino hizo lo suyo</div>
+<div id="msg6" class="message">y finalmente nuestros caminos se cruzaron</div>
+<div id="msg7" class="message">y empezó nuestra historia...</div>
+
+<!-- DIALOGOS -->
+
+<div id="d1" class="dialog">Hola... creo que nunca habíamos hablado</div>
+<div id="d2" class="dialog">Sí 😅 pero creo que ya era hora</div>
+<div id="d3" class="dialog">¿Te gustaría salir algún día?</div>
+<div id="d4" class="dialog">Claro, me encantaría</div>
+<div id="d5" class="dialog">Creo que este fue el inicio de algo muy bonito</div>
+
+<div id="hands">🤝</div>
+
+<div id="heart">❤️</div>
+
+<img id="photo" src="foto.jpg">
+
+<div id="ground"></div>
+
+</div>
+
+<script>
+
+function hearts(){
+
+let h=document.createElement("div")
+
+h.className="heartRain"
+
+h.innerHTML="❤️"
+
+h.style.left=Math.random()*100+"vw"
+
+document.body.appendChild(h)
+
+setTimeout(()=>{
+h.remove()
+},6000)
+
+}
+
+setInterval(hearts,400)
+
+</script>
+
+</body>
+</html>
